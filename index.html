@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PurplePodium Lda · Lisboa</title>
+<meta name="description" content="PurplePodium Lda – management, consultancy, training and sports & wellness events. Lisbon, Portugal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF9FD; --surface:#F1EAF7; --ink:#241433; --muted:#5E4F6E;
+  --purple:#5B2A91; --purple-2:#8C62C4; --purple-3:#C9B3E3; --line:#DCCFEA;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#170C22; --surface:#22132F; --ink:#F2EAFB; --muted:#B9A8CC;
+    --purple:#B38AE8; --purple-2:#7E51B8; --purple-3:#4A2A6E; --line:#3A2650;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#170C22; --surface:#22132F; --ink:#F2EAFB; --muted:#B9A8CC;
+  --purple:#B38AE8; --purple-2:#7E51B8; --purple-3:#4A2A6E; --line:#3A2650;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;font-size:1.125rem;line-height:1.65}
+h1,h2,h3,.sans{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif}
+h2{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;line-height:1.15;margin:0 0 1.25rem;letter-spacing:-.01em}
+h3{font-size:1.2rem;font-weight:700;margin:0 0 .35rem}
+p{margin:0 0 1rem}
+a{color:var(--purple)}
+:focus-visible{outline:3px solid var(--purple-2);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+.narrow{max-width:40rem}
+
+/* language switch */
+.lang{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;justify-content:flex-end;
+  padding:.75rem 1.5rem;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px)}
+.lang div{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;background:var(--bg)}
+.lang button{font:600 .85rem/1 "Bricolage Grotesque",Arial,sans-serif;border:0;background:none;color:var(--muted);
+  padding:.5rem .8rem;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--purple);color:var(--bg)}
+
+/* hero with podium */
+.hero{padding:2.5rem 0 0;overflow:hidden}
+.hero h1{font-size:clamp(2.8rem,10vw,6.2rem);font-weight:800;line-height:.95;letter-spacing:-.035em;margin:0 0 1.25rem;color:var(--purple)}
+.hero .lead{font-family:"Bricolage Grotesque",Arial,sans-serif;font-size:clamp(1.2rem,2.6vw,1.55rem);font-weight:500;line-height:1.35;max-width:34rem;margin-bottom:.9rem}
+.hero .sub{color:var(--muted);max-width:36rem}
+.podium{display:grid;grid-template-columns:1fr 1.15fr 1fr;align-items:end;gap:6px;margin-top:2.75rem;height:clamp(150px,26vw,240px)}
+.podium span{display:flex;align-items:flex-start;justify-content:center;padding-top:.6rem;
+  font:800 clamp(1.4rem,4vw,2.4rem)/1 "Bricolage Grotesque",Arial,sans-serif;color:var(--bg);border-radius:6px 6px 0 0}
+.podium .p2{height:68%;background:var(--purple-2)}
+.podium .p1{height:100%;background:var(--purple)}
+.podium .p3{height:46%;background:var(--purple-3);color:var(--purple)}
+
+section{padding:4.5rem 0;border-top:1px solid var(--line)}
+section.first{border-top:0}
+.tinted{background:var(--surface)}
+
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2.25rem 3rem}
+.services div{border-left:3px solid var(--purple);padding-left:1rem}
+.services p{color:var(--muted);margin:0}
+
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:2rem 3rem}
+.team .role{font-family:"Bricolage Grotesque",Arial,sans-serif;color:var(--purple);font-weight:600;font-size:.95rem;margin-bottom:.5rem}
+.team p{color:var(--muted)}
+
+dl{display:grid;grid-template-columns:minmax(8rem,12rem) 1fr;gap:.9rem 1.5rem;margin:0}
+dt{font-family:"Bricolage Grotesque",Arial,sans-serif;font-weight:600;color:var(--muted);font-size:.98rem}
+dd{margin:0}
+@media (max-width:540px){dl{grid-template-columns:1fr;gap:.15rem}dd{margin-bottom:.9rem}}
+
+.contact .btn{display:inline-block;margin-top:.5rem;background:var(--purple);color:var(--bg);text-decoration:none;
+  font:600 1rem/1 "Bricolage Grotesque",Arial,sans-serif;padding:1rem 1.4rem;border-radius:8px;overflow-wrap:anywhere}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:2rem 3rem}
+.steps .n{display:block;font:800 2.4rem/1 "Bricolage Grotesque",Arial,sans-serif;color:var(--purple-2);margin-bottom:.6rem}
+.steps p{color:var(--muted);margin:0}
+.places{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:1rem;margin-top:1.75rem}
+.places div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.2rem}
+.places strong{display:block;font:700 1.25rem/1.2 "Bricolage Grotesque",Arial,sans-serif;color:var(--purple);margin-bottom:.2rem}
+.places span{color:var(--muted);font-size:1rem}
+footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<nav class="lang" aria-label="Language">
+  <div role="group">
+    <button type="button" data-set="fr">FR</button>
+    <button type="button" data-set="en">EN</button>
+    <button type="button" data-set="pt">PT</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>PurplePodium</h1>
+    <p class="lead" data-i="lead"></p>
+    <p class="sub" data-i="sub"></p>
+    <div class="podium" aria-hidden="true">
+      <span class="p2">2</span><span class="p1">1</span><span class="p3">3</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="first tinted">
+    <div class="wrap narrow">
+      <h2 data-i="aboutT"></h2>
+      <p data-i="about1"></p>
+      <p data-i="about2"></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 data-i="servT"></h2>
+      <div class="services">
+        <div><h3 data-i="s1t"></h3><p data-i="s1"></p></div>
+        <div><h3 data-i="s2t"></h3><p data-i="s2"></p></div>
+        <div><h3 data-i="s3t"></h3><p data-i="s3"></p></div>
+        <div><h3 data-i="s4t"></h3><p data-i="s4"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tinted">
+    <div class="wrap">
+      <h2 data-i="howT"></h2>
+      <div class="steps">
+        <div><span class="n">01</span><h3 data-i="h1t"></h3><p data-i="h1"></p></div>
+        <div><span class="n">02</span><h3 data-i="h2t"></h3><p data-i="h2"></p></div>
+        <div><span class="n">03</span><h3 data-i="h3t"></h3><p data-i="h3"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 data-i="teamT"></h2>
+      <div class="team">
+        <div>
+          <h3>Thomas</h3>
+          <div class="role" data-i="roleM"></div>
+          <p data-i="thomas"></p>
+        </div>
+        <div>
+          <h3>Oleksandra</h3>
+          <div class="role" data-i="roleF"></div>
+          <p data-i="oleks"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tinted">
+    <div class="wrap">
+      <h2 data-i="whereT"></h2>
+      <p class="narrow" data-i="where"></p>
+      <div class="places">
+        <div><strong data-i="c1"></strong><span data-i="c1s"></span></div>
+        <div><strong data-i="c2"></strong><span data-i="c2s"></span></div>
+        <div><strong data-i="c3"></strong><span data-i="c3s"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 data-i="legalT"></h2>
+      <dl>
+        <dt data-i="lName"></dt><dd>PURPLEPODIUM LDA</dd>
+        <dt data-i="lForm"></dt><dd data-i="vForm"></dd>
+        <dt>NIF / NIPC</dt><dd>519 628 322</dd>
+        <dt data-i="lSeat"></dt><dd>Rua Pinheiro Chagas, 17, 3.º esq.<br>1050-174 Lisboa, Portugal</dd>
+        <dt data-i="lCap"></dt><dd>1 000,00 €</dd>
+        <dt data-i="lDate"></dt><dd data-i="vDate"></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="tinted contact">
+    <div class="wrap narrow">
+      <h2 data-i="contactT"></h2>
+      <p data-i="contact"></p>
+      <a class="btn" href="#" id="mailbtn" data-i="btn"></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap" data-i="foot"></div>
+</footer>
+
+<script>
+const T = {
+fr:{
+  howT:"Notre façon de travailler",
+  h1t:"Comprendre", h1:"Nous commençons par écouter : vos objectifs, vos contraintes et votre organisation actuelle.",
+  h2t:"Structurer", h2:"Nous construisons un plan clair, avec les bons outils, les bons partenaires et un calendrier réaliste.",
+  h3t:"Accompagner", h3:"Nous pilotons la mise en œuvre à vos côtés, jusqu'à ce que tout fonctionne sans friction.",
+  whereT:"Où nous intervenons",
+  where:"Depuis notre siège de Lisbonne, nous travaillons principalement au Portugal, en France et au Royaume-Uni. Nos stages, retraites et événements peuvent aussi se dérouler ailleurs en Europe et à l'international.",
+  c1:"Portugal", c1s:"Siège à Lisbonne", c2:"France", c2s:"Clients et partenaires", c3:"Royaume-Uni", c3s:"Clients et partenaires",
+  lead:"Société de gestion et de conseil basée à Lisbonne.",
+  sub:"Conseil en gestion, coordination de projets, formation, et organisation d'événements sportifs et bien-être, pour des entreprises, des entrepreneurs et des particuliers.",
+  aboutT:"Qui nous sommes",
+  about1:"PurplePodium Lda est une société portugaise à responsabilité limitée, créée en septembre 2026 et établie à Lisbonne.",
+  about2:"Elle réunit au Portugal les activités de ses deux associés-gérants : le conseil et la gestion d'entreprise, la coordination de projets, la formation, et des projets sportifs et bien-être à dimension internationale. Nous travaillons avec des clients au Portugal, en Europe et à l'international.",
+  servT:"Ce que nous faisons",
+  s1t:"Conseil et gestion",
+  s1:"Conseil en gestion d'entreprise, structuration opérationnelle, organisation et optimisation des processus et des outils numériques.",
+  s2t:"Coordination de projets",
+  s2:"Pilotage stratégique et opérationnel de projets, coordination des prestataires, des lieux et des intervenants.",
+  s3t:"Formation et coaching",
+  s3:"Formations, contenus pédagogiques en ligne, coaching et accompagnement professionnel.",
+  s4t:"Sport, bien-être et événements",
+  s4:"Conception et organisation de stages, retraites et événements sportifs et bien-être, en Europe et à l'international.",
+  teamT:"L'équipe",
+  roleM:"Associé-gérant",
+  roleF:"Associée-gérante",
+  thomas:"Entrepreneur, expérimenté en gestion d'entreprise, organisation opérationnelle, processus numériques et relation client. Il pilote le conseil, la structuration des activités et la coordination des projets.",
+  oleks:"Entrepreneure et coach professionnelle en sports aériens, elle organise des stages et retraites internationaux depuis 2019. Elle pilote la formation, les projets sport et bien-être, les événements et les partenariats.",
+  legalT:"Informations légales",
+  lName:"Dénomination", lForm:"Forme juridique", vForm:"Sociedade por quotas (Lda), société à responsabilité limitée",
+  lSeat:"Siège social", lCap:"Capital social", lDate:"Immatriculation", vDate:"11 septembre 2026, Registo Comercial (Portugal)",
+  contactT:"Contact",
+  contact:"Pour toute demande ou collaboration, écrivez-nous. Nous répondons en français, en anglais et en portugais.",
+  btn:"Envoyer un e-mail",
+  foot:"© 2026 PurplePodium Lda, Lisbonne, Portugal. NIPC 519 628 322."
+},
+en:{
+  howT:"How we work",
+  h1t:"Understand", h1:"We start by listening: your goals, your constraints and how you work today.",
+  h2t:"Structure", h2:"We build a clear plan with the right tools, the right partners and a realistic timeline.",
+  h3t:"Support", h3:"We manage delivery alongside you until everything runs smoothly.",
+  whereT:"Where we work",
+  where:"From our Lisbon head office, we work mainly in Portugal, France and the United Kingdom. Our camps, retreats and events can also take place elsewhere in Europe and beyond.",
+  c1:"Portugal", c1s:"Head office in Lisbon", c2:"France", c2s:"Clients and partners", c3:"United Kingdom", c3s:"Clients and partners",
+  lead:"A management and consultancy company based in Lisbon.",
+  sub:"Management consulting, project coordination, training, and sports and wellness events for companies, entrepreneurs and private clients.",
+  aboutT:"Who we are",
+  about1:"PurplePodium Lda is a Portuguese private limited company, incorporated in September 2026 and based in Lisbon.",
+  about2:"It brings together in Portugal the activities of its two shareholder-managers: business management and consultancy, project coordination, training, and international sports and wellness projects. We work with clients in Portugal, across Europe and internationally.",
+  servT:"What we do",
+  s1t:"Consulting and management",
+  s1:"Business management consulting, operational structuring, and organising and improving business processes and digital tools.",
+  s2t:"Project coordination",
+  s2:"Strategic and operational project management, coordinating suppliers, venues and contributors.",
+  s3t:"Training and coaching",
+  s3:"Training programmes, online learning content, coaching and professional support.",
+  s4t:"Sports, wellness and events",
+  s4:"Designing and running sports and wellness camps, retreats and events in Europe and internationally.",
+  teamT:"The team",
+  roleM:"Shareholder and managing director",
+  roleF:"Shareholder and managing director",
+  thomas:"Entrepreneur with experience in business management, operations, digital processes and client services. He leads consulting, business structuring and project coordination.",
+  oleks:"Entrepreneur and professional aerial-sports coach who has organised international camps and retreats since 2019. She leads training, sports and wellness projects, events and partnerships.",
+  legalT:"Company information",
+  lName:"Company name", lForm:"Legal form", vForm:"Sociedade por quotas (Lda), private limited company",
+  lSeat:"Registered office", lCap:"Share capital", lDate:"Incorporated", vDate:"11 September 2026, Portuguese Commercial Registry",
+  contactT:"Contact",
+  contact:"For enquiries or partnerships, email us. We reply in English, French and Portuguese.",
+  btn:"Send an email",
+  foot:"© 2026 PurplePodium Lda, Lisbon, Portugal. NIPC 519 628 322."
+},
+pt:{
+  howT:"Como trabalhamos",
+  h1t:"Compreender", h1:"Começamos por ouvir: os seus objetivos, as suas restrições e a forma como trabalha hoje.",
+  h2t:"Estruturar", h2:"Construímos um plano claro, com as ferramentas certas, os parceiros certos e um calendário realista.",
+  h3t:"Acompanhar", h3:"Acompanhamos a execução ao seu lado, até tudo funcionar sem atritos.",
+  whereT:"Onde atuamos",
+  where:"A partir da nossa sede em Lisboa, trabalhamos sobretudo em Portugal, França e Reino Unido. Os nossos estágios, retiros e eventos podem também decorrer noutros países da Europa e do mundo.",
+  c1:"Portugal", c1s:"Sede em Lisboa", c2:"França", c2s:"Clientes e parceiros", c3:"Reino Unido", c3s:"Clientes e parceiros",
+  lead:"Empresa de gestão e consultoria sediada em Lisboa.",
+  sub:"Consultoria de gestão, coordenação de projetos, formação e organização de eventos de desporto e bem-estar, para empresas, empreendedores e particulares.",
+  aboutT:"Quem somos",
+  about1:"A PurplePodium Lda é uma sociedade por quotas portuguesa, constituída em setembro de 2026 e sediada em Lisboa.",
+  about2:"Reúne em Portugal as atividades dos seus dois sócios-gerentes: gestão e consultoria empresarial, coordenação de projetos, formação e projetos internacionais de desporto e bem-estar. Trabalhamos com clientes em Portugal, na Europa e a nível internacional.",
+  servT:"O que fazemos",
+  s1t:"Consultoria e gestão",
+  s1:"Consultoria de gestão empresarial, estruturação operacional, organização e otimização de processos e ferramentas digitais.",
+  s2t:"Coordenação de projetos",
+  s2:"Gestão estratégica e operacional de projetos, coordenação de fornecedores, espaços e profissionais.",
+  s3t:"Formação e coaching",
+  s3:"Formações, conteúdos formativos em linha, coaching e acompanhamento profissional.",
+  s4t:"Desporto, bem-estar e eventos",
+  s4:"Conceção e organização de estágios, retiros e eventos de desporto e bem-estar, na Europa e a nível internacional.",
+  teamT:"A equipa",
+  roleM:"Sócio-gerente",
+  roleF:"Sócia-gerente",
+  thomas:"Empreendedor com experiência em gestão empresarial, organização operacional, processos digitais e serviço ao cliente. Lidera a consultoria, a estruturação das atividades e a coordenação de projetos.",
+  oleks:"Empreendedora e treinadora profissional de desportos aéreos, organiza estágios e retiros internacionais desde 2019. Lidera a formação, os projetos de desporto e bem-estar, os eventos e as parcerias.",
+  legalT:"Informações legais",
+  lName:"Firma", lForm:"Natureza jurídica", vForm:"Sociedade por quotas (Lda)",
+  lSeat:"Sede", lCap:"Capital social", lDate:"Constituição", vDate:"11 de setembro de 2026, Registo Comercial",
+  contactT:"Contacto",
+  contact:"Para pedidos ou parcerias, escreva-nos. Respondemos em português, inglês e francês.",
+  btn:"Enviar e-mail",
+  foot:"© 2026 PurplePodium Lda, Lisboa, Portugal. NIPC 519 628 322."
+}};
+const btns=document.querySelectorAll('[data-set]');
+function setLang(l){
+  if(!T[l]) l='en';
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-i]').forEach(el=>{const v=T[l][el.dataset.i]; if(v!==undefined) el.textContent=v;});
+  btns.forEach(b=>b.setAttribute('aria-pressed',b.dataset.set===l));
+  try{localStorage.setItem('pp-lang',l)}catch(e){}
+}
+btns.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.set)));
+let start=null;
+try{start=localStorage.getItem('pp-lang')}catch(e){}
+if(!start){const n=(navigator.language||'en').slice(0,2).toLowerCase(); start=T[n]?n:'en';}
+setLang(start);
+document.getElementById('mailbtn').addEventListener('click',e=>{e.preventDefault();location.href='mai'+'lto:'+['thomas0corbeau','gmail.com'].join('@');});
+</script>
+</body>
+</html>
